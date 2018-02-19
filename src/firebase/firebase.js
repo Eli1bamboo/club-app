@@ -1,35 +1,30 @@
-import * as firebase from 'firebase';
+import * as firebase from 'firebase'
 
 const prodConfig = {
-  apiKey: YOUR_API_KEY,
-  authDomain: YOUR_AUTH_DOMAIN,
-  databaseURL: YOUR_DATABASE_URL,
-  projectId: YOUR_PROJECT_ID,
-  storageBucket: '',
-  messagingSenderId: YOUR_MESSAGING_SENDER_ID,
-};
-
-const devConfig = {
-  apiKey: YOUR_API_KEY,
-  authDomain: YOUR_AUTH_DOMAIN,
-  databaseURL: YOUR_DATABASE_URL,
-  projectId: YOUR_PROJECT_ID,
-  storageBucket: '',
-  messagingSenderId: YOUR_MESSAGING_SENDER_ID,
-};
-
-const config = process.env.NODE_ENV === 'production'
-  ? prodConfig
-  : devConfig;
-
-if (!firebase.apps.length) {
-  firebase.initializeApp(config);
+  apiKey: 'AIzaSyA-z-7OiVHVG69p_Ewcln_BtXb6W_TracA',
+  authDomain: 'club-app-fddaa.firebaseapp.com',
+  databaseURL: 'https://club-app-fddaa.firebaseio.com',
+  projectId: 'club-app-fddaa',
+  storageBucket: 'club-app-fddaa.appspot.com',
+  messagingSenderId: '366099624090'
 }
 
-const db = firebase.database();
-const auth = firebase.auth();
+const devConfig = {
+  apiKey: 'AIzaSyA-z-7OiVHVG69p_Ewcln_BtXb6W_TracA',
+  authDomain: 'club-app-fddaa.firebaseapp.com',
+  databaseURL: 'https://club-app-fddaa.firebaseio.com',
+  projectId: 'club-app-fddaa',
+  storageBucket: 'club-app-fddaa.appspot.com',
+  messagingSenderId: '366099624090'
+}
 
-export {
-  db,
-  auth,
-};
+const config = process.env.NODE_ENV === 'production' ? prodConfig : devConfig
+
+if (!firebase.apps.length) {
+  firebase.initializeApp(config)
+}
+
+const db = firebase.database()
+const auth = firebase.auth()
+
+export { db, auth }
